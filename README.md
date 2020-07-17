@@ -1,3 +1,3 @@
 # README
 
-This respository is for my CodeUp database training exercises. 
+This repository is for my CodeUp database training exercises. 
