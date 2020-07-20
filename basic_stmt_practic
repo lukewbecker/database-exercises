@@ -1,0 +1,34 @@
+#Basic Statements Lesson
+
+SHOW databases;
+
+use fruits_db;
+
+SELECT * FROM fruits;
+
+SELECT name, quantity from fruits;
+
+USE employees;
+
+SELECT first_name, last_name FROM employees;
+
+SELECT *
+from employees
+WHERE emp_no = 101010;
+
+SELECT *
+FROM employees
+WHERE emp_no <= 12000;
+
+SELECT *
+FROM employees
+WHERE first_name = 'Georgi'
+AND emp_no < 30000
+and hire_date > '1990-01-01';
+
+
+SELECT *
+FROM employees
+where birth_date LIKE '%-02-%';
+
+
