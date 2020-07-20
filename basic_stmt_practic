@@ -13,7 +13,7 @@ USE employees;
 SELECT first_name, last_name FROM employees;
 
 SELECT *
-from employees
+FROM employees
 WHERE emp_no = 101010;
 
 SELECT *
@@ -31,4 +31,7 @@ SELECT *
 FROM employees
 where birth_date LIKE '%-02-%';
 
+SELECT 'I am output!' AS 'Info';
 
+SELECT concat(first_name, " ",last_name) as "full_name"
+FROM employees;
