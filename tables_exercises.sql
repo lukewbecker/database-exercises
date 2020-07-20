@@ -6,11 +6,15 @@ USE employees;
 
 SHOW tables;
 
-describe employees;
+DESCRIBE employees;
+DESCRIBE departments;
+DESCRIBE dept_emp;
+DESCRIBE dept_manager
+DESCRIBE salaries
 
 # 5 the employees table has: INT, DATE, VARCHAR, ENUM data types
 
-# 6 numeric type columns would be in saralies 
+# 6 numeric type columns would be in salaries 
 
 # 7 the departments and titles tables would be good candidates for containing columns with strings
 
