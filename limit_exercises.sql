@@ -28,5 +28,5 @@ AND birth_date LIKE '%-12-25'
 ORDER BY birth_date ASC, hire_date DESC
 LIMIT 5 OFFSET 45;
 
-# LIMIT and OFFSET can be used to create multiple pages of data. What is the relationship between OFFSET (number of results to skip), LIMIT (number of results per page), and the page number?
-# An algebraic formula would look like this: OFFSET() / LIMIT () = Page number + 1. However, since in this example the data starts on page 1 not page 0, results 45-50 would end up on page 10, not page 9
+# # LIMIT and OFFSET can be used to create multiple pages of data. What is the relationship between OFFSET (number of results to skip), LIMIT (number of results per page), and the page number?
+# An algebraic formula could look like this: n - 1 * LIMIT = OFFSET
