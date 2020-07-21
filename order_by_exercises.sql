@@ -40,12 +40,12 @@ FROM employees
 WHERE last_name LIKE 'E%'
 ORDER BY emp_no;
 
--- Exercise 5 part 3: DESC order
+-- Exercise 5 part 3: ASC order
 SELECT *
 FROM employees
 WHERE last_name LIKE 'e%'
 AND last_name LIKE '%e'
-ORDER BY emp_no DESC;
+ORDER BY emp_no;
 
 -- Exercise 6 part 1: DESC order
 SELECT *
@@ -69,7 +69,6 @@ AND last_name LIKE '%e'
 ORDER BY emp_no DESC;
 
 -- Find all employees hired in the 90s and born on Christmas — 362 rows.
--- Ordered according to Exercise 7
 SELECT *
 FROM employees
 WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'
