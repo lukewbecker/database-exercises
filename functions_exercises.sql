@@ -59,7 +59,7 @@ FROM employees;
 SELECT SUBSTR(last_name, 2, 1)
 FROM employees;
 
--- Figuring out wether SUBSTR position argument is inclusive or not - documentation is clear it is, but wanted to test it for myself.
+-- Figuring out whether SUBSTR position argument is inclusive or not - documentation is clear it is, but wanted to test it for myself.
 -- Addtionally, this test proved that for this particular exercise I would not need to CAST the DATE data type into a string for SUBSTR to work.
 -- Thus, hopefully saving some computing power...
 SELECT SUBSTR(birth_date, 3, 4)
