@@ -145,3 +145,42 @@ SELECT CONCAT ((SELECT COUNT(salary) AS count_above_avg
     	)
     AND to_date> curdate()) 
     / (SELECT COUNT(salary) FROM salaries WHERE to_date > CURDATE()) * 100, '%') AS salary_percentage;
+
+
+-- BONUS questions
+
+-- Bonus question 1
+
+-- Finding the 4 managers that identify as female:
+SELECT *
+FROM dept_manager AS dm
+JOIN employees AS e ON e.emp_no = dm.emp_no
+WHERE e.emp_no IN (
+	SELECT dm.emp_no
+	FROM dept_manager
+	WHERE dm.to_date > CURDATE()
+)
+AND e.gender = 'F';
+
+-- Then SELECT for only dept_no, which is the index used in both dept_manager table and the departments table:
+SELECT dm.dept_no
+FROM dept_manager AS dm
+JOIN employees AS e ON e.emp_no = dm.emp_no
+WHERE e.emp_no IN (
+	SELECT dm.emp_no
+	FROM dept_manager
+	WHERE dm.to_date > CURDATE()
+)
+AND e.gender = 'F';
+
+-- Combined final solution for bonus question 1:
+SELECT d.dept_name
+FROM dept_manager AS dm
+JOIN employees AS e ON e.emp_no = dm.emp_no
+JOIN departments AS d ON d.dept_no = dm.dept_no
+WHERE e.emp_no IN (
+	SELECT dm.emp_no
+	FROM dept_manager
+	WHERE dm.to_date > CURDATE()
+)
+AND e.gender = 'F';
