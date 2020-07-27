@@ -184,3 +184,24 @@ WHERE e.emp_no IN (
 	WHERE dm.to_date > CURDATE()
 )
 AND e.gender = 'F';
+
+
+-- Bonus question 2. INCOMPLETE
+
+SELECT *
+FROM salaries
+WHERE to_date > CURDATE();
+
+
+SELECT *
+FROM employees AS e
+JOIN salaries AS s ON s.emp_no = e.emp_no
+WHERE (
+	SELECT MAX(salary)
+	FROM salaries
+
+);
+
+SELECT MAX(salary)
+FROM salaries
+WHERE to_date > CURDATE();
