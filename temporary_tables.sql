@@ -65,7 +65,7 @@ FROM payment;
 -- In order to make the comparison easier, you should use the Z-score for salaries.
 -- In terms of salary, what is the best department to work for? The worst?
 
-CREATE TABLE emps AS
+CREATE TEMPORARY TABLE emps AS
 SELECT 
 e.*,
 s.salary,
