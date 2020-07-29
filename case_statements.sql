@@ -42,3 +42,6 @@ SELECT COUNT(birth_date),
 		END AS birth_decade 
 FROM employees
 GROUP BY birth_decade;
+
+-- Bonus question: What is the average salary for each of the following department groups: R&D, Sales & Marketing, Prod & QM, Finance & HR, Customer Service?
+
