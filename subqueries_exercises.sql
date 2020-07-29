@@ -186,22 +186,17 @@ WHERE e.emp_no IN (
 AND e.gender = 'F';
 
 
--- Bonus question 2. INCOMPLETE
+-- Bonus question 2. Find the first and last name of the employee with the highest salary.
 
-SELECT *
-FROM salaries
-WHERE to_date > CURDATE();
-
-
-SELECT *
-FROM employees AS e
-JOIN salaries AS s ON s.emp_no = e.emp_no
-WHERE (
-	SELECT MAX(salary)
+SELECT first_name, last_name
+FROM employees
+WHERE emp_no IN 
+	(
+	SELECT emp_no
 	FROM salaries
-
-);
-
-SELECT MAX(salary)
-FROM salaries
-WHERE to_date > CURDATE();
+	WHERE salary = 
+	(
+		SELECT MAX(salary)
+		FROM salaries)
+	GROUP BY emp_no)
+;
