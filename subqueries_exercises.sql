@@ -195,8 +195,27 @@ WHERE emp_no IN
 	SELECT emp_no
 	FROM salaries
 	WHERE salary = 
-	(
+		(
 		SELECT MAX(salary)
 		FROM salaries)
-	GROUP BY emp_no)
-;
+	GROUP BY emp_no
+);
+
+-- 3. Find the department name that the employee with the highest salary works in.
+SELECT dept_name
+FROM departments
+WHERE dept_no IN 
+	(
+	SELECT dept_no
+	FROM dept_emp
+	WHERE emp_no IN 
+		(
+		SELECT emp_no
+		FROM salaries
+		WHERE salary = 
+		(
+			SELECT MAX(salary)
+			FROM salaries)
+		GROUP BY emp_no
+		)
+);
